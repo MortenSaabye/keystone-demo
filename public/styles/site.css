@@ -5822,7 +5822,8 @@ button.close {
     display: none !important; } }
 
 #header {
-  margin-top: 30px; }
+  margin-top: 30px;
+  background-color: red; }
 
 #footer {
   margin-top: 30px;
