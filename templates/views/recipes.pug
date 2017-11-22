@@ -1,0 +1,15 @@
+extends ../layouts/default
+
+block intro
+    .container
+        h1= Recipes
+
+block content
+    .container: .row
+        .col-sm-8.col-md-9
+            each recipe in recipes
+                p= recipe.title
+                p.read-more: a(href='/recipes/' + recipe.slug) Read more...
+
+
+
