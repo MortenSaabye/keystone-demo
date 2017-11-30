@@ -7,7 +7,8 @@ exports = module.exports = function(req, res){
     //Set locals
     locals.section = 'christmas';
 
+    view.query('christmas', keystone.list('Christmas').model.find())
+    
     //Render view
     view.render('christmas');
-    
 }

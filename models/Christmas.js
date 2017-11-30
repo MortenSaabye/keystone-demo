@@ -4,17 +4,16 @@ var Types = keystone.Field.Types;
 
 
 var Christmas = new keystone.List('Christmas', {
+    map: { name: 'name'},
 	autokey: { from: 'name', path: 'key', unique: true },
 });
 
 
 Christmas.add({
-	name: { type: String, required: true },
+	name: { type: String},
     publishedDate: { type: Date, default: Date.now },
     header: { type: Types.CloudinaryImage },
-    color: { type: Types.Color },
-    price: { type: Types.Money, format: '$0,0.00' }
-
+    color: { type: Types.Color }
 });
 
 
