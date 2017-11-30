@@ -16,6 +16,7 @@ var Recipe = new keystone.List('Recipe', {
 
 Recipe.add({
     title: { type: String, required: true },
+    time: { type: Number },
     author: { type: Types.Relationship, ref: 'User', index: true },
     publishedDate: { type: Date, default: Date.now },
 	heroImage: { type: Types.CloudinaryImage },
@@ -23,5 +24,7 @@ Recipe.add({
     ingredients: {type: Types.Relationship, ref: 'Ingredient', many: true},
     guide: { type: Types.Html, wysiwyg: true, height: 400 }
 });
+
+Recipe.relationship({path: 'ingredients', ref: 'Ingredient', refPath: 'recipe'})
 
 Recipe.register();

@@ -3,9 +3,24 @@ extends ../layouts/default
 block intro
     .container
         h1= data.recipe.title
+        p.total-time-spend Time to complete: 
+            span!= data.recipe.time 
+            |  minutes
+        .ingredients
+            p What you'll need: 
+                each ingredient in data.recipe.ingredients
+                    span=ingredient.name
+                    |  - 
+            
 
 block content
     .container: .row
         .col-sm-8.col-md-9
-            p= data.recipe.guide
+            img.hero(src=data.recipe.heroImage.url)
+            .gallery-container
+                each img in data.recipe.images
+                    img.gallery(src=img.url)
+            .text-container
+                != data.recipe.guide
+
 

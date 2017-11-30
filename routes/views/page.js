@@ -16,14 +16,13 @@ exports = module.exports = function(req, res){
         })
 
         query.exec(function(err, result){
-            console.log(result)
             locals.data.page = result
-            if(result == null){
-                view.render('contact')
+            console.log(locals.data)
+            if (result === null) {
+                res.redirect('errors/404')
             }
             next(err)
         })
     })
-
     view.render('page')
 }
