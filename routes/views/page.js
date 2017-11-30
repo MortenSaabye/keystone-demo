@@ -8,7 +8,7 @@ exports = module.exports = function(req, res){
         page: req.params.page
     }
     locals.data = {
-        recipe:[]
+        page:[]
     }
     view.on('init', function(next){
         var query = keystone.list('Page').model.findOne({
@@ -16,11 +16,13 @@ exports = module.exports = function(req, res){
         })
 
         query.exec(function(err, result){
-            console.log(result)
             locals.data.page = result
+            console.log(locals.data)
+            if (result === null) {
+                res.redirect('errors/404')
+            }
             next(err)
         })
     })
-
     view.render('page')
 }
