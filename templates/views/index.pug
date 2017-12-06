@@ -2,4 +2,19 @@ extends ../layouts/default
 
 block content
 	.container: .jumbotron
+		img(src='/images/logo.svg', width='160')
+		h1 KeystoneJS by Morten and Anders
+		p You are looking at a <strong>Christmas Site</strong> right now. This is a website about Christmas.
+		p The <strong>frontend</strong> is built with <strong>PUG</strong> and bootstrap
+		p The <strong>backend</strong> is built with <strong>Node.JS</strong>
+		hr
+		if user && user.canAccessKeystone
+			p Here you get a chance to 
+				a(href='/keystone').btn.btn-lg.btn-primary Open the Admin UI
+				| <i>if you are logged in</i>
+		else
+			p <i>If you're not logged in</i> - We have created a default Admin user for you with the email <strong>saabye93@gmail.com</strong> and the password <strong>1234</strong>.
+			p
+				a(href='/keystone/signin', style='margin-right: 10px').btn.btn-lg.btn-primary Sign in
+				|  to use the Admin UI.
 		

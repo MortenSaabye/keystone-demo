@@ -5830,6 +5830,26 @@ button.close {
 .container-fluid {
   background-color: #0a7a3c; }
 
+ul.nav.navbar-nav.navbar-left li.active a {
+  background-color: #d42426;
+  position: relative; }
+  ul.nav.navbar-nav.navbar-left li.active a:before {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    content: '';
+    background-image: url(/images/jul.png);
+    background-size: cover;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%); }
+
+.navbar-default .navbar-nav > li > a {
+  color: white; }
+
+.navbar-default .navbar-nav > li.active > a {
+  color: #0a7a3c; }
+
 #footer {
   margin-top: 30px;
   border-top: 1px solid #eeeeee;

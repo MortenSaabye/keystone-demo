@@ -1,11 +1,37 @@
+$colorRed : #d42426;
+$colorGreen : #0a7a3c;
+
 #header {
 	margin-top: 30px;
 }
 .container{
-	background-color: #d42426;
+	background-color: $colorRed;
 }
 .container-fluid{
-	background-color: #0a7a3c;
+	background-color: $colorGreen;
+}
+
+ul.nav.navbar-nav.navbar-left li.active a {
+	background-color: $colorRed;
+	position: relative;
+	&:before{
+		position: absolute;
+		width: 30px;
+		height: 30px;
+		content: '';
+		background-image: url(/images/jul.png);
+		background-size: cover;
+		top: -20px;
+		left: 50%;
+		transform: translateX(-50%);
+
+	}
+}
+.navbar-default .navbar-nav > li > a {
+    color: white;
+}
+.navbar-default .navbar-nav > li.active > a {
+    color: $colorGreen;
 }
 
 #footer {
