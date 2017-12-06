@@ -14,10 +14,10 @@ exports = module.exports = function(req, res){
     view.on('init', function(next){
         var query = keystone.list('Recipe').model.findOne({
             slug: locals.filter.recipe
-        })
+        }).populate('ingredients')
 
         query.exec(function(err, result){
-            console.log(result)
+            console.log(result + "Hej ")
             locals.data.recipe = result
             next(err)
         })
