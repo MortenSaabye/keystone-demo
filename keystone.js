@@ -10,8 +10,8 @@ var keystone = require('keystone');
 // and documentation.
 
 keystone.init({
-	'name': 'Brand new site',
-	'brand': 'Brand new site',
+	'name': 'Christmas keystone',
+	'brand': 'Christmas keystone',
 
 	'sass': 'public',
 	'static': 'public',
